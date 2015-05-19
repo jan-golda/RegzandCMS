@@ -11,8 +11,12 @@ GLOBAL.requireLocal = function requireLocal(pac){
 	return require(path.join(CMS_PRIVATE_MODULES, pac));
 };
 
+// local modules
+var logger	= requireLocal('logger').getLogger("[main]".gray);
+
 // creating server
 var server = require('./server');
 
 // starting server
 server._.listen(server._.get('port'));
+logger.info("Server listening on port &{0}&", [server._.get('port')]);
