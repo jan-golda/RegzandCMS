@@ -5,7 +5,7 @@ var cookieParser	= require('cookie-parser');
 var config		= requireLocal('config');
 
 // creating server
-var server = express;
+var server = express();
 
 // protocols
 server.use(cookieParser());

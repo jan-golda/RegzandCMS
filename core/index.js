@@ -15,4 +15,4 @@ GLOBAL.requireLocal = function requireLocal(pac){
 var server = require('./server');
 
 // starting server
-server._.listen(server.get('port'));
+server._.listen(server._.get('port'));
