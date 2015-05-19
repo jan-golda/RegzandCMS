@@ -3,7 +3,7 @@ var path	= require('path');
 var async	= require('async');
 
 // local modules
-var server	= require('server');
+var server	= require('./server');
 var logger	= requireLocal('logger').getLogger("[modules]".grey);
 
 // exports
@@ -17,7 +17,10 @@ fs.readdir(CMS_MODULES, function(err, files){
 	async.each(files, function(item, callback){
 		fs.exists(path.join(CMS_MODULES, item, 'index.js'), function(exists){
 			if(exists) {
-				modules[item] = require(path.join(CMS_MODULES, item, 'index.js'));
+				var m = modules[item] = require(path.join(CMS_MODULES, item, 'index.js'));
+
+				if(m.registerApi) m.registerApi(server.apiRouter);
+
 				logger.dev("Module &{0}& loaded", [item]);
 			}
 			callback(null);
