@@ -12,10 +12,13 @@ GLOBAL.requireLocal = function requireLocal(pac){
 };
 
 // local modules
-var logger	= requireLocal('logger').getLogger("[main]".gray);
+var logger	= requireLocal('logger').getLogger("[main]".grey);
 
 // creating server
 var server = require('./server');
+
+// preparing modules
+require('./modules');
 
 // starting server
 server._.listen(server._.get('port'));
