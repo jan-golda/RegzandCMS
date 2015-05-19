@@ -10,4 +10,23 @@ function install(dir){
 	cp.spawn('npm', ['i'], { env: process.env, cwd: dir, stdio: 'inherit' });
 }
 
-install("core");
+// core
+install(path.join(__dirname, "core"));
+// modules
+fs.readdir(path.join(__dirname, "modules"), function(err, files){
+	if(err)
+		throw err;
+
+	files.forEach(function(e){
+		install(path.join(__dirname, "modules", e));
+	});
+});
+// private_modules
+fs.readdir(path.join(__dirname, "core", "private_modules"), function(err, files){
+	if(err)
+		throw err;
+
+	files.forEach(function(e){
+		install(path.join(__dirname, "core", "private_modules", e));
+	});
+});
