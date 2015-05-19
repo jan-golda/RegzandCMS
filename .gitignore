@@ -1,0 +1,7 @@
+# project specific
+node_modules/
+*.log
+
+# webstorm
+.idea/
+.idea_modules/

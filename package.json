@@ -1,0 +1,9 @@
+{
+  "name": "RegzandCMS",
+  "version": "0.1.0",
+  "author": "Jan Gołda(Regzand)",
+  "private": "true",
+  "description": "Private Content Management System created in Node.js and AngularJS",
+  "main": "core/index.js",
+  "license": "GNU"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "RegzandCMS-core",
+  "version": "0.1.0",
+  "author": "Jan Gołda(Regzand)",
+  "private": "true",
+  "description": "Core of RegzandCMS",
+  "main": "index.js",
+  "license": "GNU"
+}
