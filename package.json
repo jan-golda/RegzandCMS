@@ -5,5 +5,9 @@
   "private": "true",
   "description": "Private Content Management System created in Node.js and AngularJS",
   "main": "core/index.js",
-  "license": "GNU"
+  "license": "GNU",
+  "scripts": {
+    "preinstall": "sudo node install.js",
+    "start": "sudo node core/index.js"
+  }
 }
