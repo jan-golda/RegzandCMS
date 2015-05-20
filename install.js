@@ -5,9 +5,11 @@ var cp          = require('child_process');
 function install(dir){
 	dir = path.resolve(__dirname, dir);
 
-	if(!fs.existsSync(path.join(dir, 'package.json'))) return;
+	if(fs.existsSync(path.join(dir, 'package.json')))
+		cp.spawn('npm', ['i'], { env: process.env, cwd: dir, stdio: 'inherit' });
 
-	cp.spawn('npm', ['i'], { env: process.env, cwd: dir, stdio: 'inherit' });
+	if(fs.existsSync(path.join(dir, 'bower.json')))
+		cp.spawn('bower', ['install'], { env: process.env, cwd: dir, stdio: 'inherit' });
 }
 
 // core
