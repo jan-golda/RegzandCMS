@@ -5,8 +5,5 @@
   "private": "true",
   "description": "Core of RegzandCMS",
   "main": "index.js",
-  "license": "GNU",
-  "dependencies": {
-    "async": "^0.9.2"
-  }
+  "license": "GNU"
 }
