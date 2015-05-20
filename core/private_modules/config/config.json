@@ -1,4 +1,8 @@
 {
   "port": 80,
-  "loggingLevel": 0
+  "loggingLevel": 0,
+  "database": {
+    "url": "localhost",
+    "db": "RegzandCMS"
+  }
 }
