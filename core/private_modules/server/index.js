@@ -8,6 +8,10 @@ var logger		= requireLocal('logger').getExpress("[http]".grey);
 // creating server
 var server = express();
 
+// static router
+var staticRouter = express.Router();
+server.use(staticRouter);
+
 // logger
 server.use(logger);
 
@@ -15,10 +19,6 @@ server.use(logger);
 server.use(cookieParser());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
-
-// static router
-var staticRouter = express.Router();
-server.use(staticRouter);
 
 // api router
 var apiRouter = express.Router();
