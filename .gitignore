@@ -1,5 +1,6 @@
 # project specific
 node_modules/
+bower_components/
 *.log
 
 # webstorm
