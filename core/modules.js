@@ -3,7 +3,7 @@ var path	= require('path');
 var async	= require('async');
 
 // local modules
-var server	= require('./server');
+var server	= requireLocal('server');
 var logger	= requireLocal('logger').getLogger("[modules]".grey);
 
 // exports

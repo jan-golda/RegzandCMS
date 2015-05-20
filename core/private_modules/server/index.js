@@ -3,13 +3,13 @@ var bodyParser		= require('body-parser');
 var cookieParser	= require('cookie-parser');
 
 // local modules
-var config		= requireLocal('config').config;
+var logger		= requireLocal('logger').getExpress("[http]".grey);
 
 // creating server
 var server = express();
 
 // logger
-server.use(requireLocal('logger').getExpress("[http]".grey));
+server.use(logger);
 
 // protocols
 server.use(cookieParser());
@@ -19,12 +19,12 @@ server.use(bodyParser.urlencoded({extended: true}));
 // routers
 var apiRouter = express.Router();
 server.use("/api", apiRouter);
-
-// port
-server.set("port", config.port);
+var mainRouter = express.Router();
+server.use(mainRouter);
 
 // exports
 module.exports = {
-	_: server,
-	apiRouter: apiRouter
+	express: server,
+	apiRouter: apiRouter,
+	mainRouter: mainRouter
 };
