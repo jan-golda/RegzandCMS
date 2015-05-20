@@ -19,8 +19,6 @@ fs.readdir(CMS_MODULES, function(err, files){
 			if(exists) {
 				var m = modules[item] = require(path.join(CMS_MODULES, item, 'index.js'));
 
-				if(m.registerApi) m.registerApi(server.apiRouter);
-
 				logger.dev("Module &{0}& loaded", [item]);
 			}
 			callback(null);
