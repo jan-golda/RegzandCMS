@@ -15,9 +15,7 @@ GLOBAL.requireLocal = function requireLocal(pac){
 var logger	= requireLocal('logger').getLogger("[main]".grey);
 var config	= requireLocal('config').config;
 var server	= requireLocal('server');
-
-// preparing modules
-require('./modules');
+var modules	= requireLocal('modules');
 
 // starting server
 server.express.listen(config.port);
