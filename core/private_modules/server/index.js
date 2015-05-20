@@ -16,15 +16,22 @@ server.use(cookieParser());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
-// routers
+// static router
+var staticRouter = express.Router();
+server.use(staticRouter);
+
+// api router
 var apiRouter = express.Router();
 server.use("/api", apiRouter);
+
+// main router
 var mainRouter = express.Router();
 server.use(mainRouter);
 
 // exports
 module.exports = {
 	express: server,
+	staticRouter: staticRouter,
 	apiRouter: apiRouter,
 	mainRouter: mainRouter
 };
