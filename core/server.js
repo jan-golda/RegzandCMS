@@ -18,7 +18,7 @@ server.use(bodyParser.urlencoded({extended: true}));
 
 // routers
 var apiRouter = express.Router();
-server.use(apiRouter);
+server.use("/api", apiRouter);
 
 // port
 server.set("port", config.port);
