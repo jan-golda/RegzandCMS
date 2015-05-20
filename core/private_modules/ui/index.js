@@ -12,5 +12,6 @@ var ui = module.exports = {};
 // menu
 ui.menu = {};
 
-// registering routes
+// static files
+server.staticRouter.use(serveStatic(path.join(__dirname, "public")));
 server.staticRouter.use(serveStatic(path.join(__dirname, "bower_components")));
