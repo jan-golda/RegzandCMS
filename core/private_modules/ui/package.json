@@ -1,0 +1,10 @@
+{
+  "name": "ui",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jan Golda (Regzand)",
+  "dependencies": {
+    "serve-static": "^1.9.3"
+  }
+}

@@ -16,6 +16,7 @@ var logger	= requireLocal('logger').getLogger("[main]".grey);
 var config	= requireLocal('config').config;
 var server	= requireLocal('server');
 var modules	= requireLocal('modules');
+var ui		= requireLocal('ui');
 
 // starting server
 server.express.listen(config.port);
