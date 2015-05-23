@@ -20,8 +20,9 @@ server.use(bodyParser.urlencoded({extended: true}));
 var publicRouter = express.Router();
 server.use(publicRouter);
 
-// authorization
-server.use(requireLocal('authentication').authorizationMiddleware);
+// pre private router
+var prePrivateRouter = express.Router();
+server.use(prePrivateRouter);
 
 // private router
 var privateRouter = express.Router();
@@ -31,5 +32,6 @@ server.use(privateRouter);
 module.exports = {
 	express: server,
 	publicRouter: publicRouter,
+	prePrivateRouter: prePrivateRouter,
 	privateRouter: privateRouter
 };

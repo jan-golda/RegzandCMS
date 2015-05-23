@@ -36,7 +36,7 @@ server.publicRouter.post('/api/authenticate', function(req, res, next){
 });
 
 // authorization middleware
-var middleware = function(req, res, next){
+server.prePrivateRouter.all('*', function(req, res, next){
 	// retrieving token from request
 	var token = (req.body && req.body.access_token) || (req.query && req.query.access_token) || req.headers['x-access-token'];
 
@@ -69,10 +69,9 @@ var middleware = function(req, res, next){
 	} catch(err){
 		return res.status(403).send("Wrong token");
 	}
-};
+});
 
 // exports
 module.exports = {
-	User: User,
-	authorizationMiddleware: middleware
+	User: User
 };

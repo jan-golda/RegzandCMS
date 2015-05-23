@@ -15,6 +15,7 @@ GLOBAL.requireLocal = function requireLocal(pac){
 var logger	= requireLocal('logger').getLogger("[main]".grey);
 var config	= requireLocal('config').config;
 var server	= requireLocal('server');
+var auth	= requireLocal('authentication');
 var modules	= requireLocal('modules');
 var ui		= requireLocal('ui');
 
