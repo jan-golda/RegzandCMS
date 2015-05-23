@@ -20,6 +20,9 @@ server.use(bodyParser.urlencoded({extended: true}));
 var publicRouter = express.Router();
 server.use(publicRouter);
 
+// authorization
+server.use(requireLocal('authentication').authorizationMiddleware);
+
 // private router
 var privateRouter = express.Router();
 server.use(privateRouter);

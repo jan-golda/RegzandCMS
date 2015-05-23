@@ -1,0 +1,11 @@
+{
+  "name": "authentication",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jan Golda (Regzand)",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "jwt-simple": "^0.3.0"
+  }
+}

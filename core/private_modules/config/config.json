@@ -4,5 +4,7 @@
   "database": {
     "url": "localhost",
     "db": "RegzandCMS"
-  }
+  },
+  "tokenExpireTime": 86400000,
+  "secret": "BaabrcddzeofTgahjinjekHlamsnloo"
 }
